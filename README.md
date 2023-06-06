@@ -6,62 +6,46 @@
 To write a python program for creating Echo Client and Echo Server using TCP Sockets Links.
 
 ## ALGORITHM :
-1.Start the program.
-
-2.Get the frame size from the user
-
-3.To create the frame based on the user request.
-
-4.To send frames to server from the client side.
-
-5.If your frames reach the server, it will send ACK signal to client otherwise it will send NACKsignal to client.
-
-6.Stop the program.
+### STEP 1: Start the program.
+### STEP 2: Get the frame size from the user
+### STEP 3: To create the frame based on the user request.
+### STEP 4: To send frames to server from the client side.
+### STEP 5: If your frames reach the server, it will send ACK signal to client otherwise it will send NACKsignal to client.
+### STEP 6: Stop the program.
 
 ## PROGRAM :
 ## CLIENT:
 ## Developed By : MALARVIZHI G
 ## Reg no : 212222040096
-
+```
 import socket
-
 s = socket.socket()
-
 s.connect(('localhost', 8000))
-
 while True:
-
-    msg = input("Client > ")
-    
-    s.send(msg.encode())
-    
+    msg = input("Client > ")    
+    s.send(msg.encode())    
     print("Server > ", s.recv(1024).decode())
+```
 ## SERVER:
+```
 import socket
-
 s = socket.socket()
-
 s.bind(('localhost', 8000))
-
 s.listen(5)
-
 c, addr = s.accept()
-
 while True:
-
-    ClientMessage = c.recv(1024).decode()
-    
+    ClientMessage = c.recv(1024).decode()    
     c.send(ClientMessage.encode())
+```
 
     
 
 
 ## OUTPUT :
 ## CLIENT:
-![EX 8 CLIENT](https://github.com/22008650/EX-8/assets/122548204/28cb314f-5893-4979-b4e1-d680d827b4de)
+![ex08 client output](https://github.com/22008650/EX-8/assets/122548204/1c1b4245-f3b0-47b3-a145-b2e17ef87f44)
 ## SERVER:
-![EX 8 SERVER](https://github.com/22008650/EX-8/assets/122548204/a60cf2e0-e4ff-44b6-b351-54a57d00ee96)
-
+![ex08 server output](https://github.com/22008650/EX-8/assets/122548204/32f385fc-c99f-4dec-9c3d-dfe054f5bd17)
 
 ## RESULT :
 Thus, the python program for creating Echo Client and Echo Server using TCP Sockets Links was successfully created and executed.
